@@ -21,12 +21,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run make install
+      - name: Install dependencies
         env:
           DEBIAN_FRONTEND: noninteractive
           TZ: Etc/UTC
         run: |
-          bash ./bootstrap.sh && make
+          bash ./bootstrap.sh
+
+      - name: Run make install
+        run: make install
 
       - name: Run test
         run: make test
