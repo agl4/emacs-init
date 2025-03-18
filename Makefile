@@ -6,7 +6,7 @@
 # - https://polothy.github.io/post/2018-10-09-makefile-dotfiles/
 # - https://github.com/masasam/dotfiles/blob/master/Makefile
 #
-.PHONY : install
+.PHONY : install all
 
 SHELL := /bin/bash
 OS := $(shell uname -s)
@@ -24,4 +24,5 @@ PACKAGES = curl fish git tmux
 -include make/distro/$(DISTRIBUTION).mk
 include make/chemacs.mk
 
-install: $(BASE_TARGETS) chemacs
+install : $(BASE_TARGETS) chemacs
+all : install
