@@ -1,4 +1,4 @@
-PACKAGES += emacs git ripgrep hunspell hunspell-hu hunspell-en-gb hunspell-en-us
+PACKAGES += emacs ripgrep hunspell hunspell-hu hunspell-en-gb hunspell-en-us
 
 debian-update-repos :
 	@sudo apt-get update -y

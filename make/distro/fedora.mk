@@ -1,4 +1,4 @@
-PACKAGES += emacs git hunspell hunspell-hu hunspell-en-GB hunspell-en-US ripgrep
+PACKAGES += emacs hunspell hunspell-hu hunspell-en-GB hunspell-en-US ripgrep
 
 fedora-upgrade :
 	@sudo dnf upgrade -y

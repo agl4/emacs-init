@@ -17,7 +17,7 @@ endif
 
 # Target definitions
 BASE_TARGETS :=
-PACKAGES = curl fish git tmux
+PACKAGES = git
 
 # ... other variable declarations
 -include make/os/$(OS).mk
