@@ -1,0 +1,11 @@
+elpa
+.DS_Store
+/elpa/
+/straight/
+/var/
+/etc/
+/release.tar.xz
+/release.tar.gz
+*.elc
+/elpy/
+/flycheck_init.el
