@@ -27,7 +27,7 @@ PREFIX ?= ${HOME}/.local/bin
 EMACS_CHEMACS_CONFIGS := .emacs-profile .emacs-profiles.el
 
 # Install files from source directory to home directory
-$(HOME)/%: chemacs-profiles/%
+$(HOME)/%: share/chemacs-profiles/%
 	@install -m 0600 -v $< $@
 
 # Target for chemacs configurations
