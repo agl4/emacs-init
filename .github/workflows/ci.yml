@@ -27,3 +27,6 @@ jobs:
           TZ: Etc/UTC
         run: |
           bash ./bootstrap.sh && make
+
+      - name: Run test
+        run: make test

@@ -26,3 +26,6 @@ include make/chemacs.mk
 
 install : $(BASE_TARGETS) chemacs
 all : install
+
+test :
+	emacs --batch --eval "(message \"Emacs installed!\")"
