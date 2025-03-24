@@ -8,13 +8,15 @@
 #
 .PHONY : install all
 
+SRCDIR = ./src
+PREFIX ?= ${HOME}/.local/bin
+
 SHELL := /bin/bash
 OS := $(shell uname -s)
 ifeq ($(OS),Linux)
 DISTRIBUTION := $(shell source /etc/os-release && echo "$$ID")
 VERSION_CODENAME := $(shell cat /etc/os-release | sed -n 's/^VERSION_CODENAME=\(.*\)$$/\1/p')
 endif
-SRCDIR = ./src
 
 # Target definitions
 BASE_TARGETS :=
@@ -25,6 +27,7 @@ PACKAGES = git
 -include make/distro/$(DISTRIBUTION).mk
 include make/chemacs.mk
 include make/fish.mk
+include make/scripts.mk
 
 install : $(BASE_TARGETS) chemacs
 all : install
