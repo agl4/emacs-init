@@ -13,20 +13,12 @@ jobs:
     strategy:
       matrix:
         container:
-          - ubuntu:24.04
-          - fedora:41
+          - fedora-latest
     container:
-      image: ${{ matrix.container }}  # Dynamically use the image from the matrix
+      image: ghcr.io/agl4/init/${{ matrix.container }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Install dependencies
-        env:
-          DEBIAN_FRONTEND: noninteractive
-          TZ: Etc/UTC
-        run: |
-          bash ./bootstrap.sh
 
       - name: Run make install
         run: make install
