@@ -10,7 +10,5 @@ $(OS_SCRIPTS) :
 	@install -m 0700 -v "${SRCDIR}/os/${OS}/$(notdir $@)" "$@"
 
 scripts : $(SCRIPTS) $(OS_SCRIPTS)
-	@ln -f ${PREFIX}/keys.sh ${PREFIX}/keys
-	@ln -f ${PREFIX}/keys.sh ${PREFIX}/keys_week
 
 BASE_TARGETS += scripts
