@@ -13,13 +13,17 @@ jobs:
     strategy:
       matrix:
         container:
-          - fedora-latest ghcr.io/agl4/init/fedora-latest
+          - ghcr.io/agl4/init/fedora-latest
           - fedora:42
     container:
       image: ${{ matrix.container }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - run: |
+          curl -fsSL https://raw.githubusercontent.com/agl4/init/refs/heads/main/bootstrap.sh | sh
+        if: matrix.container == 'fedora:42'
 
       - name: Run make install
         run: make install
