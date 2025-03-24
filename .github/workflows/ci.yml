@@ -13,9 +13,10 @@ jobs:
     strategy:
       matrix:
         container:
-          - fedora-latest
+          - fedora-latest ghcr.io/agl4/init/fedora-latest
+          - fedora:42
     container:
-      image: ghcr.io/agl4/init/${{ matrix.container }}
+      image: ${{ matrix.container }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
