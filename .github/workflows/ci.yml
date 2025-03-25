@@ -14,7 +14,7 @@ jobs:
       matrix:
         container:
           - ghcr.io/agl4/init/fedora-latest
-          - fedora:42
+          # - fedora:42
     container:
       image: ${{ matrix.container }}
     steps:
