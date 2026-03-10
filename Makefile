@@ -8,6 +8,7 @@
 #
 .PHONY : install all
 
+XDG_CONFIG_HOME ?= $(HOME)/.config
 SRCDIR = ./src
 PREFIX ?= ${HOME}/.local/bin
 
